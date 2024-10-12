@@ -40,7 +40,7 @@ public class Post extends BaseEntity {
 	private String title;
 
 	@Column(length = 2000)
-	private Integer description;
+	private String description;
 
 	@Column(name = "video_url", nullable = false, length = 8192)
 	private String videoUrl;
@@ -51,7 +51,7 @@ public class Post extends BaseEntity {
 
 	@Builder
 	public Post(Long postId, Boolean approvalStatus, Integer eatenCount, Integer saved_count, String title,
-		Integer description, String videoUrl) {
+		String description, String videoUrl) {
 		this.postId = postId;
 		this.approvalStatus = approvalStatus;
 		this.eatenCount = eatenCount;
