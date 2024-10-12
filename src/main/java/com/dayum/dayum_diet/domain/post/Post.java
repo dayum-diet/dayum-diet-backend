@@ -39,7 +39,7 @@ public class Post extends BaseEntity {
 	@Column(nullable = false, length = 100)
 	private String title;
 
-	@Column(length = 255)
+	@Column(length = 2000)
 	private Integer description;
 
 	@Column(name = "video_url", nullable = false, length = 8192)
