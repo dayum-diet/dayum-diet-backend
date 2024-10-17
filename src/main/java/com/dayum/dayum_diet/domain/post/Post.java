@@ -27,14 +27,14 @@ public class Post extends BaseEntity {
 	@Column(name = "post_id")
 	private Long postId;
 
-	@Column(name = "approval_status", nullable = false, columnDefinition = "boolean default false")
-	private Boolean approvalStatus;
+	@Column(name = "approval_status", nullable = false)
+	private boolean approvalStatus;
 
-	@Column(name = "eaten_count", nullable = false, columnDefinition = "bigint default 0")
-	private Integer eatenCount;
+	@Column(name = "eaten_count", nullable = false)
+	private long eatenCount;
 
-	@Column(name = "saved_count", nullable = false, columnDefinition = "bigint default 0")
-	private Integer saved_count;
+	@Column(name = "saved_count", nullable = false)
+	private long savedCount;
 
 	@Column(nullable = false, length = 100)
 	private String title;
@@ -50,12 +50,12 @@ public class Post extends BaseEntity {
 	private Member member;
 
 	@Builder
-	public Post(Long postId, Boolean approvalStatus, Integer eatenCount, Integer saved_count, String title,
+	public Post(Long postId, boolean approvalStatus, long eatenCount, long savedCount, String title,
 		String description, String videoUrl) {
 		this.postId = postId;
 		this.approvalStatus = approvalStatus;
 		this.eatenCount = eatenCount;
-		this.saved_count = saved_count;
+		this.savedCount = savedCount;
 		this.title = title;
 		this.description = description;
 		this.videoUrl = videoUrl;
