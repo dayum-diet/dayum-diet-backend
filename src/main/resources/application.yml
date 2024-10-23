@@ -1,0 +1,24 @@
+server:
+  port: 8080  # 애플리케이션 포트
+
+spring:
+  application:
+    name: dayum-diet-backend  # 애플리케이션 이름
+
+  datasource:
+    url: jdbc:postgresql://52.78.195.244:5432/postgres  # DB 접속 URL
+    username: dayam  # DB 사용자명
+    password: dy1234!@  # DB 비밀번호
+    driver-class-name: org.postgresql.Driver  # PostgreSQL 드라이버 클래스명
+
+  jpa:
+    hibernate:
+      ddl-auto: update  # 스키마 자동 업데이트
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect  # PostgreSQL에 맞는 방언 설정
+    show-sql: true  # SQL 로그 출력
+
+logging:
+  level:
+    root: INFO  # 로그 레벨 설정
