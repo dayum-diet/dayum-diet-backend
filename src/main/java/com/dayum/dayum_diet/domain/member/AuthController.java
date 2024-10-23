@@ -68,8 +68,23 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> signup(@RequestBody Member newMember) {
+    public ResponseEntity<?> signup(@RequestBody Map<String, Object> request) {
+        // 프론트엔드에서 전달된 값 받기
+        String nickname = (String) request.get("nickname");
+        String introduction = (String) request.get("introduction");
+        String profileImageUrl = (String) request.get("profileImageUrl"); // 프로필 사진 URL
+
+        // 새로운 멤버 객체 생성
+        Member newMember = Member.builder()
+                .nickname(nickname) // 닉네임은 이미 중복체크된 값
+                .introduction(introduction)
+                .profileImageUrl(profileImageUrl) // 프로필 사진
+                .build();
+
+        // 회원가입 서비스 호출
         Map<String, String> tokens = signupService.signup(newMember);
+
+        // AccessToken과 RefreshToken 반환
         return ResponseEntity.ok(tokens);
     }
 
