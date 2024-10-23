@@ -1,0 +1,14 @@
+spring:
+  config:
+    activate:
+      on-profile: common
+
+
+  redis:
+    host: localhost
+    port: 6379
+
+jwt:
+  secret: yourSecretKey  # JWT 비밀 키
+  access-token-expiration: 30 # AccessToken 만료 시간 (분)
+  refresh-token-expiration: 10080 # RefreshToken 만료 시간 (분)
