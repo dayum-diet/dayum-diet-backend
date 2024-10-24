@@ -10,6 +10,7 @@ import com.dayum.dayum_diet.domain.loginPlatform.LoginPlatform;
 import com.dayum.dayum_diet.domain.member.enums.Gender;
 import com.dayum.dayum_diet.domain.member.enums.Role;
 import com.dayum.dayum_diet.domain.post.Post;
+import com.dayum.dayum_diet.domain.searchHistory.SearchHistory;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -70,6 +71,9 @@ public class Member extends BaseEntity {
 
 	@OneToMany(mappedBy = "member")
 	private List<LoginPlatform> platforms;
+
+	@OneToMany(mappedBy = "member")
+	private List<SearchHistory> searchHistories;
 
 	@Builder
 	public Member(UUID memberId, String name, String nickname, Gender gender, String ageRange, String introduction,
